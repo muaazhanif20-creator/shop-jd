@@ -5,7 +5,7 @@
  <p v-if="isAboutPage">{{ description}}</p>
  <p v-else>Rs: {{price}}</p>
 <button class="buyButton" v-show="isButtonShow">Buy now</button><br>
-<button class="DelButton" v-show="IsDeleteButton">Delete</button>
+<button class="DelButton" v-show="IsDeleteButton" @click="onClickDeleteProduct(id)">Delete</button>
 </div>
 </template>
 
@@ -44,4 +44,9 @@ defineProps({
         default:false
     }
 })
+const emit = defineEmits('deleteProduct')
+
+function onClickDeleteProduct(id){
+emit('deleteProduct',id)
+}
 </script>

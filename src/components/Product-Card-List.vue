@@ -3,7 +3,7 @@
     <section class="products">
          <h2>Featured Products</h2>
          <div class="product-list flex-center">
-            <ProductCard v-for="value in store.products"  :id="value.id" :name="value.title" :imgSrc="value.image" :price="value.price" IsDeleteButton="true"></ProductCard>    
+            <ProductCard @deleteProduct="deleteProductFrombackend" v-for="value in store.products"  :id="value.id" :name="value.title" :imgSrc="value.image" :price="value.price" IsDeleteButton="true"></ProductCard>    
          </div>
     </section>
 </template>
@@ -13,5 +13,11 @@ import {useProductList} from '../store/productlist'
 
 const store = useProductList()
 store.getProductListing()
+
+function deleteProductFrombackend(id){
+ if(id){
+    store.deleteProduct(id)
+ }
+}
 
 </script>
