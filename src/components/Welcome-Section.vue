@@ -4,7 +4,7 @@
         <div class="flex-center flex-direction-column section-height">
                <h1 class="text-color-white welcome-text-font-size">{{title}}</h1>
                 <p class="text-color-white margin-top-bottom-10 welcome-paragraph-font-size">{{subTitle}}</p>
-                <button v-if="isButtonShow">shop now</button> 
+                <button class="buyButton" v-if="isButtonShow">shop now</button> 
                
         </div>     
     </section>

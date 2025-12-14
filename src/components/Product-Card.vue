@@ -4,7 +4,8 @@
  <h3>{{name}}</h3>
  <p v-if="isAboutPage">{{ description}}</p>
  <p v-else>Rs: {{price}}</p>
-<button v-show="isButtonShow">Buy now</button>
+<button class="buyButton" v-show="isButtonShow">Buy now</button><br>
+<button class="DelButton" v-show="IsDeleteButton">Delete</button>
 </div>
 </template>
 
@@ -37,6 +38,10 @@ defineProps({
     description:{
         type:String,
         default:''
+    },
+    IsDeleteButton:{
+        type:Boolean,
+        default:false
     }
 })
 </script>
